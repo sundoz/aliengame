@@ -7,11 +7,14 @@ class Ship:
         self.screen = screen
 
         self.image = pygame.image.load('images/ship.bmp')
+        self.image.set_alpha()
+        self.image.set_colorkey((255, 0, 255))
         self.rect = self.image.get_rect()
         self.screen_rect = screen.get_rect()
 
         self.rect.centerx = self.screen_rect.centerx
         self.rect.bottom = self.screen_rect.bottom
+
 
     def blitme(self):
         """Draw the ship at its current location."""

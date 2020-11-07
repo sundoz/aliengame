@@ -1,8 +1,9 @@
-import sys
+
 import pygame
 
 from settings import Settings
 from ship import Ship
+import game_functions as gf
 
 
 def run_game():
@@ -12,10 +13,8 @@ def run_game():
     pygame.display.set_caption("Alien Invasion")
     ship = Ship(screen)
     while True:
-
-        screen.fill(ai_settings.bg_color)
-        ship.blitme()
-        pygame.display.flip()
+        gf.check_events(ship)
+        gf.update_screen(ai_settings, screen, ship)
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
